@@ -60,3 +60,15 @@ Il doit déléguer chaque sous-tâche à un composant dédié ayant **une respon
 3. **Non-Régression Absolue** :
    * Lancez `./gradlew test` (ou `.\gradlew.bat test` sous Windows).
    * **100% des tests de `OrderCheckoutServiceTest` doivent rester verts** sans avoir modifié la logique des assertions métier !
+
+---
+
+## Soumission de l'Étape (Tag Git Obligatoire)
+
+Dès que tous les tests passent au vert et que votre code est propre :
+```bash
+git add .
+git commit -m "feat(sprint-1): refactorisation SRP de OrderCheckoutService"
+git tag sprint-1-srp
+git push origin main --tags
+```

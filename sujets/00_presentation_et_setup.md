@@ -57,3 +57,25 @@ Tous les tests initiaux doivent être **verts** avant de commencer !
 
 > **À chaque étape, la suite de tests existante doit impérativement rester VERTE.**  
 > Un refactoring d'architecture ne doit **jamais** altérer le comportement métier attendu. Si un test existant échoue, c'est que votre refactoring a introduit une régression !
+
+---
+
+## Workflow Git & Soumission Incrémentale par Tags
+
+Vous travaillez tout au long du TP sur **un seul et même dépôt Git de manière incrémentale**. Vous ne changez pas de dossier à chaque étape : vous faites évoluer le même code source sprint après sprint.
+
+Pour figer vos livrables et permettre l'évaluation, **la soumission de chaque étape doit obligatoirement s'accompagner d'un tag Git** posé sur le commit validé :
+
+| Étape terminée | Nom du Tag Git obligatoire | Commande de tag |
+| :--- | :--- | :--- |
+| **Sprint 1 (SRP)** | `sprint-1-srp` | `git tag sprint-1-srp && git push origin sprint-1-srp` |
+| **Sprint 2 (OCP)** | `sprint-2-ocp` | `git tag sprint-2-ocp && git push origin sprint-2-ocp` |
+| **Sprint 3 (LSP)** | `sprint-3-lsp` | `git tag sprint-3-lsp && git push origin sprint-3-lsp` |
+| **Sprint 4 (ISP)** | `sprint-4-isp` | `git tag sprint-4-isp && git push origin sprint-4-isp` |
+| **Sprint 5 (DIP)** | `sprint-5-dip` | `git tag sprint-5-dip && git push origin sprint-5-dip` |
+
+### Protocole de fin de sprint :
+1. Lancez `./gradlew test` et assurez-vous que tous les tests passent.
+2. Committez vos changements : `git commit -m "feat(sprint-X): ..."`
+3. Créez le tag : `git tag sprint-X-...`
+4. Poussez votre branche et vos tags : `git push origin main --tags`
